@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <rect width="800" height="480" fill="#F2E8E4"/>
+  <circle cx="400" cy="210" r="54" fill="#7A1F2E"/>
+  <path d="M384 184 L384 236 L424 210 Z" fill="#FFFFFF"/>
+  <text x="400" y="320" font-family="Georgia, 'Playfair Display', serif" font-size="26" fill="#7A1F2E" text-anchor="middle">Video coming soon</text>
+  <text x="400" y="356" font-family="system-ui, 'DM Sans', sans-serif" font-size="15" fill="#5A5A5A" text-anchor="middle">Upload in progress</text>
+</svg>
