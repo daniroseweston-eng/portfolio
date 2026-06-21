@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danielle Weston — Social Media Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF8F4;
+    --blush: #F2E8E4;
+    --wine: #7A1F2E;
+    --wine-light: #A33044;
+    --nude: #D4A89A;
+    --charcoal: #1C1C1C;
+    --mid: #5A5A5A;
+    --light: #8A8A8A;
+    --white: #FFFFFF;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(122,31,46,0.1);
+  }
+
+  nav .logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--wine);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  nav ul a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--wine); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%; right: -5%;
+    width: 55vw; height: 55vw;
+    max-width: 700px; max-height: 700px;
+    border-radius: 50%;
+    background: var(--blush);
+    z-index: 0;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--wine);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--wine);
+  }
+
+  .hero-desc {
+    max-width: 520px;
+    font-size: 1.05rem;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 2.25rem;
+    background: var(--wine);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--wine-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.875rem 2.25rem;
+    border: 1px solid var(--wine);
+    color: var(--wine);
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .btn-outline:hover { background: var(--wine); color: var(--white); transform: translateY(-1px); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 4rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: inline-block;
+    width: 3rem;
+    height: 1px;
+    background: var(--nude);
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 4rem; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--wine);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 3rem;
+  }
+
+  /* METRICS */
+  #metrics {
+    background: var(--charcoal);
+    color: var(--white);
+  }
+
+  #metrics .section-label { color: var(--nude); }
+  #metrics .section-label::before { background: var(--nude); }
+  #metrics .section-title { color: var(--white); }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .metric-card {
+    background: #262626;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .metric-card:hover { background: #2e2e2e; }
+
+  .metric-num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--nude);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .metric-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .metric-context {
+    font-size: 0.78rem;
+    color: #FFFFFF;
+    margin-top: 0.35rem;
+  }
+
+  /* EXPERIENCE */
+  #experience { background: var(--white); }
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+  }
+
+  .exp-item {
+    border-left: 2px solid var(--blush);
+    padding-left: 1.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .exp-item:hover { border-color: var(--wine); }
+
+  .exp-company {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.75rem;
+  }
+
+  .exp-desc {
+    font-size: 0.9rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    background: var(--blush);
+    color: var(--wine);
+    border-radius: 0;
+  }
+
+  /* SELECTED WORKS */
+  #works { background: var(--cream); }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .work-card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+
+  .work-card.featured {
+    grid-column: span 2;
+  }
+
+  .work-img {
+    background: var(--blush);
+    display: block;
+    position: relative;
+    overflow: visible;
+  }
+
+  .work-card.featured .work-img { display: block; }
+
+  .work-img-placeholder {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    color: rgba(122,31,46,0.15);
+    font-style: italic;
+  }
+
+  .work-body {
+    padding: 1.5rem;
+  }
+
+  .work-client {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 0.4rem;
+  }
+
+  .work-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+
+  .work-desc {
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.55;
+  }
+
+  /* SKILLS */
+  #skills { background: var(--blush); }
+
+  .skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .skills-text p {
+    font-size: 1rem;
+    color: var(--mid);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-groups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .skill-group h4 {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--wine);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(122,31,46,0.2);
+  }
+
+  .skill-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-group ul li {
+    font-size: 0.88rem;
+    color: var(--mid);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .skill-group ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--nude);
+  }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--white); }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .testi-card.full-width {
+    grid-column: span 2;
+  }
+
+  .testi-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(0,0,0,0.07);
+    background: var(--cream);
+    position: relative;
+  }
+
+  .testi-quote {
+    font-family: var(--serif);
+    font-size: 3rem;
+    color: var(--nude);
+    line-height: 0.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .testi-text {
+    font-size: 0.92rem;
+    color: var(--mid);
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .testi-author strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  .testi-author span {
+    font-size: 0.78rem;
+    color: var(--light);
+    letter-spacing: 0.05em;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--wine);
+    color: var(--white);
+    text-align: center;
+  }
+
+  #contact .section-label { color: rgba(255,255,255,0.5); justify-content: center; }
+  #contact .section-label::before { background: rgba(255,255,255,0.4); }
+
+  #contact .section-title {
+    color: var(--white);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #contact p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.75rem;
+    border: 1px solid rgba(255,255,255,0.35);
+    color: var(--white);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .contact-link:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  .contact-direct {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .contact-direct a {
+    color: var(--nude);
+    text-decoration: none;
+  }
+
+  .contact-direct a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: #111;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    padding: 1.75rem 4rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    nav ul { gap: 1.5rem; }
+    .hero { padding: 7rem 2rem 4rem; }
+    section { padding: 4rem 2rem; }
+    .works-grid { grid-template-columns: 1fr 1fr; }
+    .work-card.featured { grid-column: span 2; }
+    .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    nav ul { display: none; }
+    .hero h1 { font-size: 3rem; }
+    .works-grid { grid-template-columns: 1fr; }
+    .work-card.featured { grid-column: span 1; }
+    .skills-groups { grid-template-columns: 1fr; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ===== LAYOUT REFINEMENTS (design pass) ===== */
+  /* Company logo / monogram badges in experience */
+  .exp-item { padding-left: 0 !important; border-left: none !important; }
+  .exp-head {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+  .exp-logo {
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--blush);
+    border: 1px solid rgba(122,31,46,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--wine);
+    overflow: hidden;
+    letter-spacing: 0.02em;
+  }
+  .exp-logo img { width: 100%; height: 100%; object-fit: cover; }
+  .exp-item .exp-company { margin-bottom: 0.2rem; }
+  .exp-item .exp-role { margin-bottom: 0; }
+  .exp-item .exp-desc { padding-left: 0; }
+  .exp-item:hover .exp-logo { border-color: var(--wine); }
+
+
+  /* Center content into an editorial column on large screens */
+  .section-label,
+  .section-title,
+  .metrics-grid,
+  .exp-grid,
+  .skills-layout,
+  .testi-grid,
+  .video-grid,
+  #photos .works-grid,
+  #experience > div[style] {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #metrics .section-title { margin-bottom: 2.5rem; }
+  .metrics-grid { margin-top: 0; }
+
+  /* Hero: graceful framed photo with editorial offset accent */
+  .hero-inner > div:last-child { position: relative; }
+  .hero-inner img {
+    width: 360px !important;
+    height: 480px !important;
+    object-fit: cover !important;
+    object-position: center 28% !important;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 20px 20px 0 rgba(122,31,46,0.10);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Photo gallery: true masonry, full images, no crop, no letterbox */
+  #photos .works-grid {
+    display: block !important;
+    column-count: 3;
+    column-gap: 1.5rem;
+    grid-template-columns: none !important;
+  }
+  #photos .work-card {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    width: 100%;
+  }
+  #photos .work-img { background: var(--white) !important; }
+  #photos .work-img img {
+    height: auto !important;
+    max-height: none !important;
+    object-fit: fill !important;
+    width: 100% !important;
+  }
+
+  @media (max-width: 900px) {
+    #photos .works-grid { column-count: 2; }
+  }
+  @media (max-width: 600px) {
+    #photos .works-grid { column-count: 1; }
+    .hero-inner img { width: 100% !important; height: 420px !important; box-shadow: 12px 12px 0 rgba(122,31,46,0.10); }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">D. Weston</a>
+  <ul>
+    <li><a href="#metrics">Results</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#works">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner" style="display:flex; align-items:center; gap:4rem; flex-wrap:wrap;">
+    <div style="flex:1; min-width:280px;">
+      <p class="hero-eyebrow">Social Media Marketing · Content Creation</p>
+      <h1>Danielle<br><em>Weston</em></h1>
+      <p class="hero-desc">I'm passionate about creating content that brings brands to life and builds meaningful connections with their audiences. Inspired by fashion, travel, culture, and creativity, I turn ideas into content that feels authentic, engaging, and memorable.</p>
+      <div class="hero-cta">
+        <a href="#works" class="btn-primary">View my work</a>
+        <a href="#contact" class="btn-outline">Get in touch</a>
+      </div>
+    </div>
+    <div style="flex:0 0 auto;">
+      <img src="assets/headshot.jpg" alt="Danielle Weston" style="width:340px; max-width:90vw; height:460px; object-fit:cover; object-position:center top; display:block;">
+    </div>
+  </div>
+  <p class="hero-scroll">Scroll to explore</p>
+</section>
+
+<!-- METRICS -->
+<section id="metrics">
+  <div class="section-label">By the numbers</div>
+  <div class="section-title">Real results, real reach</div>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <span class="metric-num">87.5K</span>
+      <div class="metric-label">Views</div>
+      <div class="metric-context">Month-over-month growth</div>
+    </div>
+    <div class="metric-card">
+      <span class="metric-num">5.64%</span>
+      <div class="metric-label">Engagement rate</div>
+      <div class="metric-context">Above industry average</div>
+    </div>
+    <div class="metric-card">
+      <span class="metric-num">2,255</span>
+      <div class="metric-label">Avg. reach / day</div>
+      <div class="metric-context">Organic, no paid ads</div>
+    </div>
+    <div class="metric-card">
+      <span class="metric-num">4+</span>
+      <div class="metric-label">Brands managed</div>
+      <div class="metric-context">Nonprofits to SMBs</div>
+    </div>
+    <div class="metric-card">
+      <span class="metric-num">71</span>
+      <div class="metric-label">Monthly interactions</div>
+      <div class="metric-context">Likes, comments, saves</div>
+    </div>
+    <div class="metric-card">
+      <span class="metric-num">3</span>
+      <div class="metric-label">Platforms directed</div>
+      <div class="metric-context">Instagram · TikTok · LinkedIn</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Where I've worked</div>
+  <div class="section-title">Experience</div>
+  <div style="margin-bottom:3rem; padding:1.75rem 2rem; border-left:2px solid var(--wine); background:var(--cream);">
+    <div style="display:flex; align-items:flex-start; gap:1.5rem; flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.72rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:var(--wine); margin-bottom:0.3rem;">Education</div>
+        <div style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--charcoal);">Florida State University</div>
+        <div style="font-size:0.9rem; color:var(--mid); margin-top:0.2rem;">B.A. Media &amp; Communication Studies</div>
+      </div>
+      <div style="margin-left:auto; text-align:right;">
+        <div style="font-size:0.78rem; color:var(--light); letter-spacing:0.05em;">Tallahassee, FL</div>
+        <div style="font-size:0.78rem; color:var(--light);">Class of 2026</div>
+      </div>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid rgba(122,31,46,0.12);">
+      <span style="font-size:0.72rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; padding:0.35rem 0.85rem; background:var(--blush); color:var(--wine);">President's List · Spring 2025</span>
+      <span style="font-size:0.72rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; padding:0.35rem 0.85rem; background:var(--blush); color:var(--wine);">Dean's List · Fall 2024</span>
+      <span style="font-size:0.72rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; padding:0.35rem 0.85rem; background:var(--blush); color:var(--wine);">Study Abroad · Florence, Italy · Spring 2025</span>
+      <span style="font-size:0.72rem; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; padding:0.35rem 0.85rem; background:var(--blush); color:var(--wine);">Sigma Delta Tau · 2024–2025</span>
+    </div>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-item">
+      <div class="exp-head">
+        <div class="exp-logo" id="logo-sva" style="background:#FFFFFF;"><img src="assets/image-1.png" alt="logo" style="width:100%;height:100%;object-fit:contain;padding:6px;"></div>
+        <div>
+          <div class="exp-company">Social View Agency</div>
+          <div class="exp-role">Social Media Marketing Intern</div>
+        </div>
+      </div>
+      <p class="exp-desc">Managed accounts for nonprofits and small businesses — planning, creating, and scheduling content tailored to each brand's audience. Became the sole director of the agency's TikTok, owning the full content calendar and growth strategy.</p>
+      <div class="exp-tags">
+        <span class="tag">TikTok</span>
+        <span class="tag">Content Calendar</span>
+        <span class="tag">Multi-client</span>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-head">
+        <div class="exp-logo" id="logo-dr" style="background:#FFFFFF;"><img src="assets/image-2.png" alt="logo" style="width:100%;height:100%;object-fit:contain;padding:6px;"></div>
+        <div>
+          <div class="exp-company">Digital Resource</div>
+          <div class="exp-role">Digital Ads Intern</div>
+        </div>
+      </div>
+      <p class="exp-desc">Created Google and Facebook ad campaigns for medical, physical therapy, and fitness clients. Managed and paced client budgets against monthly goals, and maintained performance-tracking Excel reports across multiple accounts.</p>
+      <div class="exp-tags">
+        <span class="tag">Google Ads</span>
+        <span class="tag">Meta Ads</span>
+        <span class="tag">Budget Pacing</span>
+        <span class="tag">Analytics</span>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-head">
+        <div class="exp-logo" id="logo-swp" style="background:#000000;"><img src="assets/image-3.png" alt="logo" style="width:100%;height:100%;object-fit:contain;padding:6px;"></div>
+        <div>
+          <div class="exp-company">Second Wind Pro</div>
+          <div class="exp-role">Social Media Intern</div>
+        </div>
+      </div>
+      <p class="exp-desc">Produced content designed to grow brand awareness and attract student-athletes. Used video and photo editing tools to build posts that matched the brand identity while staying on top of trends relevant to the athletic audience.</p>
+      <div class="exp-tags">
+        <span class="tag">Video Editing</span>
+        <span class="tag">Brand Voice</span>
+        <span class="tag">Trend Research</span>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-head">
+        <div class="exp-logo" id="logo-strike" style="background:#000000;"><img src="assets/image-4.png" alt="logo" style="width:100%;height:100%;object-fit:contain;padding:6px;"></div>
+        <div>
+          <div class="exp-company">Strike Magazine Tallahassee</div>
+          <div class="exp-role">Social Media Assistant</div>
+        </div>
+      </div>
+      <p class="exp-desc">Part of the core social team for a fashion and lifestyle magazine — brainstorming content, capturing photo and video at events, curating posts, and collaborating closely with the Social Media Director on all digital channels.</p>
+      <div class="exp-tags">
+        <span class="tag">Editorial</span>
+        <span class="tag">Event Coverage</span>
+        <span class="tag">Instagram</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED WORKS: VIDEOS -->
+<section id="works">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">Selected video works</div>
+
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .video-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .video-card video {
+      width: 100%;
+      display: block;
+      max-height: 480px;
+      background: #000;
+      object-fit: contain;
+    }
+    .video-embed-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: #000;
+      overflow: hidden;
+    }
+    .video-embed-wrap iframe,
+    .video-embed-wrap blockquote {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: unset !important;
+      margin: 0 !important;
+    }
+  </style>
+
+  <div class="video-grid">
+
+    <div class="video-card">
+      <div style="position:relative; cursor:pointer;" onclick="window.open('https://www.instagram.com/reel/DWgtwggB6iS/','_blank')">
+        <img src="assets/image-5.png" alt="Club Pilates Work Day Reel" style="width:100%; height:420px; object-fit:cover; display:block;">
+        <div style="position:absolute; inset:0; background:rgba(0,0,0,0.35); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem;">
+          <div style="width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.9); display:flex; align-items:center; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#7A1F2E"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <span style="color:#fff; font-size:0.78rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase;">Watch on Instagram</span>
+        </div>
+      </div>
+      <div class="work-body">
+        <div class="work-client">Social View Agency · Club Pilates</div>
+        <div class="work-title">Club Pilates — Instagram Reel</div>
+        <p class="work-desc">Created and posted this Reel for Club Pilates Englewood as part of managing their full social media presence — from content planning to filming, editing, captioning, and community engagement.</p>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed-wrap" id="tt1-wrap" style="position:relative; background:#000; min-height:420px; cursor:pointer; display:flex; align-items:center; justify-content:center;">
+        <div id="tt1-placeholder" style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+          <div style="width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <div style="text-align:center;">
+            <div style="color:#fff; font-size:0.85rem; font-weight:500;">@strikemagazine</div>
+            <div style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; margin-top:0.25rem;">Click to load TikTok</div>
+          </div>
+        </div>
+        <div id="tt1-embed" style="display:none; width:100%;">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@strikemagazine/video/7569692305851010318" data-video-id="7569692305851010318" style="max-width:100%; min-width:unset; margin:0;"><section><a target="_blank" title="@strikemagazine" href="https://www.tiktok.com/@strikemagazine?refer=embed">@strikemagazine</a></section></blockquote>
+        </div>
+        <script>
+          document.getElementById('tt1-wrap').addEventListener('click', function() {
+            document.getElementById('tt1-placeholder').style.display = 'none';
+            document.getElementById('tt1-embed').style.display = 'block';
+            this.style.cursor = 'default';
+            this.style.display = 'block';
+            var s = document.createElement('script');
+            s.src = 'https://www.tiktok.com/embed.js';
+            s.async = true;
+            document.body.appendChild(s);
+          });
+        </script>
+      </div>
+      <div class="work-body">
+        <div class="work-client">Strike Magazine Tallahassee · TikTok</div>
+        <div class="work-title">Anok Yai — Model of the Year tribute TikTok</div>
+        <p class="work-desc">Produced this trending fashion TikTok for Strike Magazine celebrating Anok Yai's Model of the Year win. Used curated runway clips, on-trend audio, and fashion hashtags to maximize reach among the magazine's style-forward audience.</p>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-embed-wrap" id="tt2-wrap" style="position:relative; background:#000; min-height:420px; cursor:pointer; display:flex; align-items:center; justify-content:center;">
+        <div id="tt2-placeholder" style="display:flex; flex-direction:column; align-items:center; gap:1rem;">
+          <div style="width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.6); display:flex; align-items:center; justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <div style="text-align:center;">
+            <div style="color:#fff; font-size:0.85rem; font-weight:500;">@strikemagazine</div>
+            <div style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; margin-top:0.25rem;">Click to load TikTok</div>
+          </div>
+        </div>
+        <div id="tt2-embed" style="display:none; width:100%;">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@strikemagazine/video/7565966093399952654" data-video-id="7565966093399952654" style="max-width:100%; min-width:unset; margin:0;"><section><a target="_blank" title="@strikemagazine" href="https://www.tiktok.com/@strikemagazine?refer=embed">@strikemagazine</a></section></blockquote>
+        </div>
+        <script>
+          document.getElementById('tt2-wrap').addEventListener('click', function() {
+            document.getElementById('tt2-placeholder').style.display = 'none';
+            document.getElementById('tt2-embed').style.display = 'block';
+            this.style.cursor = 'default';
+            this.style.display = 'block';
+            var s = document.createElement('script');
+            s.src = 'https://www.tiktok.com/embed.js';
+            s.async = true;
+            document.body.appendChild(s);
+          });
+        </script>
+      </div>
+      <div class="work-body">
+        <div class="work-client">Strike Magazine Tallahassee · TikTok</div>
+        <div class="work-title">Vogue World: Hollywood — fashion recap TikTok</div>
+        <p class="work-desc">Edited and posted this fashion culture TikTok covering Vogue World: Hollywood for Strike Magazine. Combined editorial clip selection with trend-aware captions and hashtag strategy to drive engagement and views.</p>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <video controls playsinline poster="assets/video-placeholder.svg">
+        <source src="assets/video-1.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+      <div class="work-body">
+        <div class="work-client">Personal project · Lifestyle content</div>
+        <div class="work-title">College coffee shop guide — original lifestyle video</div>
+        <p class="work-desc">Self-produced lifestyle video exploring coffee shops around Tallahassee, showcasing what each spot has to offer. Demonstrates location scouting, on-the-go filming, and the ability to create engaging place-based content — a format widely used by lifestyle and F&B brands.</p>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <video controls playsinline poster="assets/video-placeholder.svg">
+        <source src="assets/video-2.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+      <div class="work-body">
+        <div class="work-client">Personal project · Travel content</div>
+        <div class="work-title">New York summer recap — original travel video</div>
+        <p class="work-desc">Filmed, edited, and posted a travel recap video documenting a summer trip to New York City. A personal passion project that reflects a genuine love for content creation — from capturing moments in the field to crafting a final edit that tells a story worth watching.</p>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <video controls playsinline poster="assets/video-placeholder.svg">
+        <source src="assets/video-3.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+      <div class="work-body">
+        <div class="work-client">Personal project · TikTok</div>
+        <div class="work-title">Senior year recap — original TikTok</div>
+        <p class="work-desc">Self-initiated TikTok video capturing senior year memories with friends. Demonstrates personal editing style, storytelling instincts, and the ability to create content that feels authentic, emotional, and shareable — the same qualities that make branded content resonate.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SELECTED WORKS: PHOTOS -->
+<section id="photos" style="background: var(--white);">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">Selected graphic works</div>
+  <div class="works-grid" style="grid-template-columns: 1fr 1fr;">
+    <div class="work-card">
+      <div class="work-img" style="padding: 0; line-height:0;">
+        <img src="assets/image-6.png" alt="Intermittent Fasting blog post graphic for Weight Loss RVA" style="width:100%; height:auto; display:block; max-height:500px; object-fit:contain;">
+      </div>
+      <div class="work-body">
+        <div class="work-client">Weight Loss RVA · Wellness brand</div>
+        <div class="work-title">Blog promotion — "Exploring Intermittent Fasting"</div>
+        <p class="work-desc">Designed a scroll-stopping Instagram post to drive traffic to a new blog post. Used bold typography and a clean food visual to communicate the brand's approachable, coach-led tone.</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="padding: 0; line-height:0;">
+        <img src="assets/image-7.png" alt="3 Delicious Meals that Fuel Weight Loss graphic" style="width:100%; height:auto; display:block; max-height:500px; object-fit:contain;">
+      </div>
+      <div class="work-body">
+        <div class="work-client">Weight Loss RVA · Nutrition content</div>
+        <div class="work-title">Recipe series — "3 Delicious Meals that Fuel Weight Loss"</div>
+        <p class="work-desc">Created a value-driven content graphic combining editorial food photography with clear, benefit-led copy — designed to save, share, and build trust with the brand's audience.</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="padding: 0; line-height:0;">
+        <img src="assets/image-8.png" alt="Fashion editorial moodboard for Strike Magazine" style="width:100%; height:auto; display:block; max-height:500px; object-fit:contain;">
+      </div>
+      <div class="work-body">
+        <div class="work-client">Strike Magazine Tallahassee · Fashion editorial</div>
+        <div class="work-title">Style profile — editorial fashion moodboard</div>
+        <p class="work-desc">Produced a full editorial layout pairing original copy with curated fashion visuals for Strike Magazine's digital platforms, capturing a distinct personal style narrative.</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="padding: 0; line-height:0;">
+        <img src="assets/image-9.png" alt="Club Pilates Open House event graphic" style="width:100%; height:auto; display:block; max-height:500px; object-fit:contain;">
+      </div>
+      <div class="work-body">
+        <div class="work-client">Social View Agency · Club Pilates</div>
+        <div class="work-title">Event graphic — Pilates Day Open House</div>
+        <p class="work-desc">Designed a branded event announcement post for Club Pilates, clearly communicating key details (date, times, offers) while staying true to the studio's clean, welcoming aesthetic.</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="padding: 0; line-height:0;">
+        <img src="assets/image-10.png" alt="Club Pilates Free Compliments community engagement post" style="width:100%; height:auto; display:block; max-height:500px; object-fit:contain;">
+      </div>
+      <div class="work-body">
+        <div class="work-client">Social View Agency · Club Pilates</div>
+        <div class="work-title">Community post — "Free Compliments (Take One)"</div>
+        <p class="work-desc">Conceived and designed a playful, shareable community engagement post for Club Pilates Englewood that leaned into brand personality to spark interaction and warm audience connection.</p>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="padding: 0; line-height:0;">
+        <img src="assets/image-11.png" alt="Taurus Rising astrology fashion editorial for Strike Magazine" style="width:100%; height:auto; display:block; max-height:500px; object-fit:contain;">
+      </div>
+      <div class="work-body">
+        <div class="work-client">Strike Magazine · Astrology & fashion</div>
+        <div class="work-title">Taurus Rising — astrology-meets-fashion editorial</div>
+        <p class="work-desc">Blended personality-driven copywriting with styled visual collage for Strike Magazine's digital editorial. Tapped into astrology trend formats to create highly shareable, identity-driven content.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">What I bring</div>
+  <div class="section-title">Skills & tools</div>
+  <div class="skills-layout">
+    <div class="skills-text">
+      <p>What excites me most is bringing ideas to life in ways that feel intentional and impactful. Whether it's developing social media concepts, designing visuals, writing copy, or supporting a campaign from start to finish, I enjoy telling stories that connect with audiences and reflect a brand's unique identity.</p>
+      <p>I adapt quickly, love collaborating with others, and enjoy working in fast-moving environments where creativity and strategy go hand in hand. Most importantly, I care about creating content that sparks connection and leaves a lasting impression.</p>
+    </div>
+    <div class="skills-groups">
+      <div class="skill-group">
+        <h4>Social media management</h4>
+        <ul>
+          <li>Content calendar creation & scheduling</li>
+          <li>Platform management (Instagram, TikTok, LinkedIn)</li>
+          <li>Performance tracking & analytics</li>
+          <li>Trend monitoring & ideation</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Content creation</h4>
+        <ul>
+          <li>Short-form video editing (Reels, TikTok)</li>
+          <li>Photo editing & retouching</li>
+          <li>Copywriting & caption writing</li>
+          <li>AI-assisted content & ideation</li>
+          <li>Brand consistency across platforms</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Strategy & campaigns</h4>
+        <ul>
+          <li>Paid social campaign setup</li>
+          <li>Budget pacing & client reporting</li>
+          <li>Cross-platform content strategy</li>
+          <li>Ad creative development</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Software & tools</h4>
+        <ul>
+          <li>Adobe Photoshop &amp; CapCut</li>
+          <li>Canva</li>
+          <li>Meta Business Suite</li>
+          <li>Hootsuite</li>
+          <li>AI tools (ChatGPT, generative AI)</li>
+          <li>Google &amp; Facebook Ads Manager</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label">What people say</div>
+  <div class="section-title">Recommendations</div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Danielle was a reliable and motivated team member who made meaningful contributions to our paid social efforts. She picked up processes quickly and showed strong attention to detail. What stood out most was her positive attitude and willingness to learn — she took feedback well, asked smart questions, and could be trusted to follow through independently.</p>
+      <div class="testi-author">
+        <strong>Megan Hoagland</strong>
+        <span>Facebook Advertising Strategist · Digital Resource</span>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Danielle is a notably quick learner who maintains a positive attitude when tackling new challenges. She utilized her strong design skills and knowledge of Canva to produce high-quality ad creatives, independently managed reporting and performance tracking across multiple accounts, and consistently made her work align with client goals. Her ability to pick up processes quickly makes her a strong candidate for future marketing roles.</p>
+      <div class="testi-author">
+        <strong>Caroline Nokes</strong>
+        <span>Senior Facebook Advertising Strategist · Digital Resource LLC</span>
+      </div>
+    </div>
+    <div class="testi-card full-width">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">From day one, Danielle showed up with the kind of curiosity, work ethic, and positivity that you hope to see in every team member. She quickly became someone I could rely on across a wide range of client work. She ran Club Pilates' social media end-to-end — coordinating directly with an on-site videographer and managing everything from content planning to posting and community engagement. Across each of these very different projects, Danielle always brought fresh ideas, hit her deadlines, and communicated promptly and clearly. She was receptive to feedback, and didn't just take notes — she internalized them and applied them in her next round of work. She has the creativity, professionalism, and drive to do meaningful work in social media, marketing, or any field she chooses to pursue. I recommend her without reservation.</p>
+      <div class="testi-author">
+        <strong>Kyla Gendler</strong>
+        <span>Founder & Supervisor · Social View Agency</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Let's work together</div>
+  <div class="section-title">Get in touch</div>
+  <p>Open to full-time social media marketing roles. Based in South Florida, and willing to relocate. Open to remote opportunities.</p>
+  <div class="contact-links">
+    <a href="mailto:daniroseweston@gmail.com" class="contact-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email me
+    </a>
+    <a href="https://www.instagram.com/dani.weston" target="_blank" class="contact-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @dani.weston
+    </a>
+    <a href="https://www.linkedin.com/in/danielle-weston" target="_blank" class="contact-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="assets/resume.pdf" download="Danielle-Weston-Resume.pdf" class="contact-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download résumé
+    </a>
+  </div>
+  <p class="contact-direct">Or reach me directly at <a href="mailto:daniroseweston@gmail.com">daniroseweston@gmail.com</a> · <a href="tel:9547746705">954-774-6705</a></p>
+</section>
+
+<footer>
+  © 2025 Danielle Weston · Social Media Marketing · Content Creation · Digital Media
+</footer>
+
+</body>
+</html>
