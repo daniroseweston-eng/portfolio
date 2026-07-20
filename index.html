@@ -663,6 +663,22 @@
   #metrics .section-title { margin-bottom: 2.5rem; }
   .metrics-grid { margin-top: 0; }
 
+  /* Hero: fully centered column layout */
+  .hero-inner { margin-left: auto; margin-right: auto; }
+  .hero-inner > div:first-child { display: flex; flex-direction: column; align-items: center; }
+  .hero .hero-eyebrow { justify-content: center; }
+  .hero .hero-eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--wine);
+  }
+  .hero h1 { text-align: center; }
+  .hero .hero-desc { margin-left: auto; margin-right: auto; text-align: center; }
+  .hero .hero-cta { justify-content: center; }
+  .hero-scroll { left: 50%; transform: translateX(-50%); }
+
   /* Hero: graceful framed photo with editorial offset accent */
   .hero-inner > div:last-child { position: relative; }
   .hero-inner img {
@@ -723,7 +739,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner" style="display:flex; flex-direction:column; align-items:flex-start; gap:2.75rem;">
+  <div class="hero-inner" style="display:flex; flex-direction:column; align-items:center; gap:2.75rem;">
     <div style="width:100%;">
       <p class="hero-eyebrow">Social Media Marketing · Content Creation</p>
       <h1>Danielle<br><em>Weston</em></h1>
